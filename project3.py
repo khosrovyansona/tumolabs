@@ -1,9 +1,25 @@
-import time
+import time 
 
-hour = int(input('Insert an hour: '))
-minute = int(input('Insert an minute: '))
-second = int(input('Insert an second: '))
+hour = input('Insert an hour: ')
+minute = input('Insert a minute: ')
+second = input('Insert a second: ')
 
+while True:
+    if not (hour.isdigit() and minute.isdigit() and second.isdigit()):
+        print("All inputs must be numbers. Please try again.")
+    else:
+        hour = int(hour)
+        minute = int(minute)
+        second = int(second)
+
+        if not (0 <= hour <= 23) or not (0 <= minute <= 59) or not (0 <= second <= 59):
+            print("Invalid time! Hour must be 0-23, minute and second 0-59. Please try again.")
+        else:
+            break  
+
+    hour = input('Insert an hour: ')
+    minute = input('Insert a minute: ')
+    second = input('Insert a second: ')
 
 while hour >- 1:
     for i in range(minute,-1,-1):
@@ -33,5 +49,4 @@ while hour >- 1:
 
     hour-=1
     minute = 59
-
 
